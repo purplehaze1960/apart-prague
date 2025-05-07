@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apartment Rentals</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    .lang-switch {
+      margin-top: 10px;
+    }
+    .lang-switch button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      border: none;
+      background-color: #fff;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 280px;
+      height: auto;
+      border-radius: 5px;
+    }
+    .info {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .info h2 {
+      margin-bottom: 10px;
+    }
+    .prices {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .contact {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .icons {
+      margin: 10px 0;
+    }
+    .icons img {
+      width: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    .book-btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 id="title">Apartment Rentals in Prague</h1>
+  <div class="lang-switch">
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('cz')">Čeština</button>
+    <button onclick="setLanguage('ru')">Русский</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="gallery">
+    <img src="3.png" alt="Apartment 1">
+    <img src="5.png" alt="Apartment 2">
+    <img src="6.png" alt="Apartment 3">
+    <img src="7.png" alt="Apartment 4">
+    <img src="8.png" alt="Apartment 5">
+  </div>
+
+  <div class="info">
+    <h2 id="price-title">Prices (CZK):</h2>
+    <div class="prices" id="prices">
+      1kk – 15,000 CZK<br/>
+      2kk – 23,000 CZK<br/>
+      3kk – 30,000 CZK<br/>
+      2+1 – 21,000 CZK
+    </div>
+
+    <div class="contact">
+      <div class="icons">
+        <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp"/>
+        <img src="https://img.icons8.com/color/48/telegram-app--v1.png" alt="Telegram"/>
+        <img src="https://img.icons8.com/color/48/apple-mail.png" alt="Email"/>
+      </div>
+      <div id="contact-text">
+        Phone: +420 776 463 540<br/>
+        Email: info@maptel.cz
+      </div>
+    </div>
+
+    <a href="#" class="book-btn" id="book-button">Book Now</a>
+  </div>
+</div>
+
+<script>
+  const langData = {
+    en: {
+      title: "Apartment Rentals in Prague",
+      priceTitle: "Prices (CZK):",
+      prices: `1kk – 15,000 CZK<br/>2kk – 23,000 CZK<br/>3kk – 30,000 CZK<br/>2+1 – 21,000 CZK`,
+      contact: `Phone: +420 776 463 540<br/>Email: info@maptel.cz`,
+      button: "Book Now"
+    },
+    cz: {
+      title: "Pronájem bytů v Praze",
+      priceTitle: "Ceny (Kč):",
+      prices: `1kk – 15 000 Kč<br/>2kk – 23 000 Kč<br/>3kk – 30 000 Kč<br/>2+1 – 21 000 Kč`,
+      contact: `Telefon: +420 776 463 540<br/>Email: info@maptel.cz`,
+      button: "Rezervovat"
+    },
+    ru: {
+      title: "Аренда квартир в Праге",
+      priceTitle: "Цены (CZK):",
+      prices: `1кк – 15 000 крон<br/>2кк – 23 000 крон<br/>3кк – 30 000 крон<br/>2+1 – 21 000 крон`,
+      contact: `Телефон: +420 776 463 540<br/>Email: info@maptel.cz`,
+      button: "Забронировать"
+    }
+  };
+
+  function setLanguage(lang) {
+    document.getElementById("title").innerHTML = langData[lang].title;
+    document.getElementById("price-title").innerHTML = langData[lang].priceTitle;
+    document.getElementById("prices").innerHTML = langData[lang].prices;
+    document.getElementById("contact-text").innerHTML = langData[lang].contact;
+    document.getElementById("book-button").innerHTML = langData[lang].button;
+  }
+</script>
+
+</body>
+</html>
